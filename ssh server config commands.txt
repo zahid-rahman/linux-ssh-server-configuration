@@ -1,0 +1,122 @@
+command line for staring ssh services:
+--------------------------------------
+sudo service ssh start
+sudo service ssh stop
+sudo service ssh restart
+sudo systemctl restart sshd
+
+
+Adding user:
+------------
+adduser username
+
+Delete user:
+-----------
+
+userdel -r username
+
+if user still exist then>>>
+
+ps aux | grep {Process ID}
+killall -TREM -u username
+userdel -r username
+
+update user:
+------------
+
+passwd
+
+(current password)
+(new password)
+(retype password)
+
+
+root access : 
+------------
+sudo visudo
+
+root    ALL=(ALL:ALL) ALL
+newuser ALL=(ALL:ALL) ALL
+
+
+access control:
+---------------
+
+sudo nano /etc/ssh /ssh_config
+
+single user>>
+AllowUsers user1
+
+multiple users>>
+AllowUsers user1 user2
+
+single user>>
+DenyUsers user1
+
+multiple users>>
+DenyUsers user1 user2
+
+
+
+Key authentication:
+-------------------
+
+ssh-keygen -t rsa
+press enter (pri) press pass (pub)
+
+ssh-copy-id username@serveraddress
+exp: ssh-copy-id banner@192.168.0.108
+
+excess the user:
+ssh username@192.168.0.108
+
+Limitation:
+-----------
+
+MaxSessions (number)
+
+
+usermod useage:
+----------------
+
+-c = We can add comment field for the useraccount.
+-d = To modify the directory for any existing user account.
+-e = Using this option we can make the account expiry in specific period.
+-g = Change the primary group for a User.
+-G = To add a supplementary groups.
+-a = To add anyone of the group to a secondary group.
+-l = To change the login name from tecmint to tecmint_admin.
+-L = To lock the user account. This will lock the password so we can’t use the account.
+-m = moving the contents of the home directory from existing home dir to new dir.
+-p = To Use un-encrypted password for the new password. (NOT Secured).
+-s = Create a Specified shell for new accounts.
+-u = Used to Assigned UID for the user account between 0 to 999.
+-U = To unlock the user accounts. This will remove the password lock and allow us to use the user account.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
